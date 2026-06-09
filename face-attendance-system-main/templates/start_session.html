@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Start Attendance Session</h2>
+
+<form method="post">
+  <label>Class:</label>
+  <input type="text" name="class_name" placeholder="e.g. TE AI A" required>
+
+  <label>Subject:</label>
+  <input type="text" name="subject" placeholder="e.g. AI" required>
+
+  <button type="submit">Start &amp; Open Camera</button>
+</form>
+
+<p>
+  After you click <b>Start &amp; Open Camera</b>, the webcam window will open.<br>
+  Show students' faces to the camera. Press <b>q</b> in the webcam window to end the session.
+</p>
+{% endblock %}

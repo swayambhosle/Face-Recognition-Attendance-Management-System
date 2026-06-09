@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Attendance Records</h2>
+
+{% if sessions|length == 0 %}
+  <p>No attendance sessions found.</p>
+{% else %}
+  {% for sess in sessions %}
+  
+    <div style="margin-bottom: 10px; padding: 10px; background: #f1f6ff; border-left: 4px solid #0448a5;">
+      <h3 style="margin: 0;">
+        Session {{ sess.id }} —
+        {{ sess.class_name }} —
+        {{ sess.subject }} —
+        {{ sess.date }}
+      </h3>
+
+      <a href="{{ url_for('export_session_excel', session_id=sess.id) }}">
+        <button style="margin-top: 10px; margin-bottom: 10px;">Download Excel</button>
+      </a>
+    </div>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+      <tr>
+        <th>Student Name</th>
+        <th>Roll No</th>
+        <th>Status</th>
+        <th>Marked At</th>
+      </tr>
+
+      {% set found = false %}
+      {% for r in records if r.session_id == sess.id %}
+      {% set found = true %}
+      <tr>
+        <td>{{ students[r.student_id].name }}</td>
+        <td>{{ students[r.student_id].roll_no }}</td>
+        <td style="color: {% if r.status == 'present' %}green{% else %}red{% endif %}; font-weight:bold;">
+          {{ r.status }}
+        </td>
+        <td>{{ r.timestamp }}</td>
+      </tr>
+      {% endfor %}
+
+      {% if not found %}
+      <tr>
+        <td colspan="4" style="text-align:center; font-style:italic;">No students marked for this session</td>
+      </tr>
+      {% endif %}
+    </table>
+
+    <br><br>
+
+  {% endfor %}
+{% endif %}
+{% endblock %}
