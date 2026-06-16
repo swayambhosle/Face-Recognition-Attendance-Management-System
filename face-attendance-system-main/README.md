@@ -23,7 +23,7 @@
 
 <br/>
 
-[🎬 Watch Demo](https://www.linkedin.com/posts/shridhar-kalasgonda-86b03a295_python-flask-opencv-ugcPost-7405617083092377600-8z_c) · [📂 Explore Code](#-project-structure) · [🚀 Get Started](#-installation)
+[📂 Explore Code](#-project-structure) · [🚀 Get Started](#-installation)
 
 </div>
 
@@ -211,8 +211,7 @@ Connect your phone to the same Wi-Fi/hotspot → Open `http://<server-ip>:5000` 
 
 <div align="center">
 
-> 🎬 **Live Demo Video:**
-> [Watch the full system walkthrough on LinkedIn →](https://www.linkedin.com/posts/shridhar-kalasgonda-86b03a295_python-flask-opencv-ugcPost-7405617083092377600-8z_c)
+*Add your application screenshots here to showcase your project UI.*
 
 </div>
 
